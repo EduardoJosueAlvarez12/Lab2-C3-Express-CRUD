@@ -1,0 +1,35 @@
+{{> header }}
+<h2 style="text-align: center;">{{ viewTitle }}</h2>
+<div class="container">
+    <form action="/student" method="POST">
+                    <input type="hidden" name="_id" required>
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" class="form-control" name="studentId" id="studentId" 
+                            placeholder="Enter Student ID">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name"
+                            placeholder="Enter First and Middle Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" name="lastName" id="lastName" 
+                            placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate">Birth Date</label>
+                        <input type="date" class="form-control" name="birthDate" id="birthDate" 
+                            placeholder="Enter birth Date">
+                </div>
+
+                <div class="form-group">
+                        <label for="gradeLevel">Grade Lavel</label>
+                        <input type="text" class="form-control" name="gradeLevel" id="gradeLevel" 
+                            placeholder="Enter Grade Lavel">
+                </div>
+                            
+        <button type="submit" class="btn btn-info">Save</button>
+    </form>
+</div>

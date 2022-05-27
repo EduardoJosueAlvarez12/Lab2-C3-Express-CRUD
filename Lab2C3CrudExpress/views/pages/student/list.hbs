@@ -1,0 +1,25 @@
+{{> header}}
+
+<h2 style="text-align: center;">{{ viewTitle }}</h2>
+<div class="container">
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Grade Level</th>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.studentId}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.lastName}}</td>
+                <td>{{this.birthDate}}</td>
+                <td>{{this.gradeLevel}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
