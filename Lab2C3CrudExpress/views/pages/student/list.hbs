@@ -9,6 +9,7 @@
             <th>Last Name</th>
             <th>Birth Date</th>
             <th>Grade Level</th>
+            <th>Actions</th>
         </thead>
         <tbody>
             {{#each list}}
@@ -18,6 +19,14 @@
                 <td>{{this.lastName}}</td>
                 <td>{{this.birthDate}}</td>
                 <td>{{this.gradeLevel}}</td>
+                <td>
+                    <a href="/student/{{this._id}}" class="btn btn-info">Update</a>
+                    <a href="/student/delete/{{this._id}}" class="btn btn-danger"
+                    onclick="return confirm('Would you like to delete this record?');">
+                    Delete</a>
+
+                </td>
+
             </tr>
             {{/each}}
         </tbody>

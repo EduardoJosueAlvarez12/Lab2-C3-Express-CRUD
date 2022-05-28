@@ -1,0 +1,29 @@
+{{> header}}
+
+<h2 style="text-align: center;">{{ viewTitle }}</h2>
+<div class="container">
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <th>Student ID</th>
+            <th>Course ID</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {{#each list}}
+            <tr>
+                <td>{{this.studentId}}</td>
+                <td>{{this.courseId}}</td>
+                <td>{{this.date}}</td>
+                <td>
+                    <a href="/enrollment/{{this._id}}" class="btn btn-info">Update</a>
+                    <a href="/enrollment/delete/{{this._id}}" class="btn btn-danger"
+                        onclick="return confirm('Would you like to delete this record?');">
+                        Delete</a>
+
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

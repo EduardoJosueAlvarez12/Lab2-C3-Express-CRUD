@@ -24,7 +24,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) =>{
     if (req.user) {
+        if(req.body._id == '')
         newStudent(req, res)
+        else
+        updateStudent(req, res)
       } else {
         res.render(loginRoute, {
           message: "Please log in to continue",
@@ -52,28 +55,76 @@ function newStudent(req, res){
 }
 
 
-router.get('/list', (req, res)=> {
 
-
-    if (req.user) {
-        Student.find((err, doc) => {
-            if(!err){
-                res.render('pages/student/list',{
-                    list: doc,
-                    viewTitle: "Students"
-                })
-                console.log("Error" + err);
-            }
-        });
-    
+function updateStudent(req, res){
+  Student.findOneAndUpdate({_id: req.body._id}, req.body, {new: true}, (err, doc) => {
+      if(!err){
+          res.redirect('student/list');
       } else {
-        res.render(loginRoute, {
-          message: "Please log in to continue",
-          messageClass: "alert-danger",
-        });
+          res.render('student/addEdit', {
+              viewTitle: "Update Student",
+              student: req.body
+          })
       }
-    
+  })
+}
 
+
+router.get('/list', (req, res)=> {
+  if(req.user){
+  Student.find((err, doc) => {
+      if(!err){
+          res.render('pages/student/list', {
+              list: doc,
+              viewTitle: "Student"
+          })
+      } else {
+          console.log("Error" + err);
+      }
+  });
+} else {
+  res.render(loginRoute, {
+    message: "Please log in to continue",
+    messageClass: "alert-danger",
+  });
+}
+
+  
+})
+
+router.get('/:id', (req, res) => {
+  if (req.user) {
+      Student.findById(req.params.id, (err, doc) => {
+          if(!err){
+              res.render('pages/student/addEdit', {
+                  viewTitle: "Update Student",
+                  student: doc
+              });
+          }
+      })
+  } else {
+      res.render(loginRoute, {
+        message: "Please log in to continue",
+        messageClass: "alert-danger",
+      });
+    }
+})
+
+router.get('/delete/:id', (req, res) => {
+  if (req.user) {
+      Student.findByIdAndDelete(req.params.id, (err, doc) =>{
+          if(!err){
+              res.redirect('/student/list');
+          } else {
+              console.log("Error" + err);
+          }
+      })
+    } else {
+      res.render(loginRoute, {
+        message: "Please log in to continue",
+        messageClass: "alert-danger",
+      });
+    }
 })
 
 

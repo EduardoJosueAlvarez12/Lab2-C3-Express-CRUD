@@ -1,0 +1,31 @@
+{{> header }}
+<h2 style="text-align: center;">{{ viewTitle }}</h2>
+<div class="container">
+    <form action="/enrollment" method="POST">
+        <input type="hidden" name="_id" value="{{enrollment._id}}" required>
+
+        {{!-- este mensaje validara que el Estudiante Exista --}}
+        {{#if message}}
+        <div class="alert {{ messageClass }}">
+            {{message}}
+        </div>
+        {{/if}}
+
+        <div class="form-group">
+            <label for="studentId">Student ID</label>
+            <input type="text" class="form-control" name="studentId" id="studentId" placeholder="Enter Student ID"
+                value="{{enrollment.studentId}}">
+        </div>
+        <div class="form-group">
+            <label for="courseId">Course ID</label>
+            <input type="text" class="form-control" name="courseId" id="courseId" placeholder="Enter Course ID"
+                value="{{enrollment.courseId}}">
+        </div>
+        <div class="form-group">
+            <label for="size">Date</label>
+            <input type="date" class="form-control" name="date" id="date" placeholder="Enter Size"
+                value="{{enrollment.date}}">
+        </div>
+        <button type="submit" class="btn btn-info">Save</button>
+    </form>
+</div>

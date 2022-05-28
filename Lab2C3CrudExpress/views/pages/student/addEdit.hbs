@@ -2,32 +2,32 @@
 <h2 style="text-align: center;">{{ viewTitle }}</h2>
 <div class="container">
     <form action="/student" method="POST">
-                    <input type="hidden" name="_id" required>
+                    <input type="hidden" name="_id" value="{{student._id}}" required>
                     <div class="form-group">
                         <label for="studentId">Student ID</label>
                         <input type="text" class="form-control" name="studentId" id="studentId" 
-                            placeholder="Enter Student ID">
+                            placeholder="Enter Student ID" value="{{student.studentId}}">
                     </div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" name="name" id="name"
-                            placeholder="Enter First and Middle Name">
+                            placeholder="Enter First and Middle Name" value="{{student.name}}">
                     </div>
                     <div class="form-group">
                         <label for="lastname">Last Name</label>
                         <input type="text" class="form-control" name="lastName" id="lastName" 
-                            placeholder="Enter Last Name">
+                            placeholder="Enter Last Name" value="{{student.lastName}}">
                     </div>
                     <div class="form-group">
                         <label for="birthDate">Birth Date</label>
                         <input type="date" class="form-control" name="birthDate" id="birthDate" 
-                            placeholder="Enter birth Date">
+                            placeholder="Enter birth Date" value="{{student.birthDate}}">
                 </div>
 
                 <div class="form-group">
                         <label for="gradeLevel">Grade Lavel</label>
                         <input type="text" class="form-control" name="gradeLevel" id="gradeLevel" 
-                            placeholder="Enter Grade Lavel">
+                            placeholder="Enter Grade Lavel" value="{{student.gradeLevel}}">
                 </div>
                             
         <button type="submit" class="btn btn-info">Save</button>
