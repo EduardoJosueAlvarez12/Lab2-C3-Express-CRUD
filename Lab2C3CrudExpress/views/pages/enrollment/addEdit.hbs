@@ -17,21 +17,21 @@
         <div class="form-group">
             <label for="studentId">Student ID</label>
             <input type="text" class="form-control" name="studentId" id="studentId" placeholder="Enter Student ID"
-                aria-describedby="studentIdHelp" value="{{enrollment.studentId}}">
+                aria-describedby="studentIdHelp" value="{{enrollment.studentId}}" required>
             <small id="studentIdHelp" class="form-text text-muted">Make sure you type the Student ID exactly how it is
                 registered in our database.</small>
         </div>
         <div class="form-group">
             <label for="courseId">Course ID</label>
             <input type="text" class="form-control" name="courseId" id="courseId" placeholder="Enter Course ID"
-                aria-describedby="courseIdHelp" value="{{enrollment.courseId}}">
+                aria-describedby="courseIdHelp" value="{{enrollment.courseId}}" required>
             <small id="courseIdHelp" class="form-text text-muted">Make sure you type the Course ID exactly how it is
                 registered in our database.</small>
         </div>
         <div class="form-group">
             <label for="size">Date</label>
             <input type="date" class="form-control" name="date" id="date" placeholder="Enter Size"
-                value="{{enrollment.date}}">
+                value="{{enrollment.date}}" required>
         </div>
         <button type="submit" class="btn btn-info">Save</button>
     </form>

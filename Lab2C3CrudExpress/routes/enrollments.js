@@ -33,6 +33,7 @@ router.post("/", (req, res) => {
     if (!err) {
       for (i = 0; i < doc.length; i++) {
         courseList[i] = doc[i].courseId;
+      }
         Student.find((err, doc) => {
           if (!err) {
             for (i = 0; i < doc.length; i++) {
@@ -86,7 +87,6 @@ router.post("/", (req, res) => {
             console.log("Error" + err);
           }
         });
-      }
     } else {
       console.log("Error" + err);
     }
