@@ -1,35 +1,40 @@
 {{> header }}
-<h2 style="text-align: center;">{{ viewTitle }}</h2>
-<div class="container">
-    <form action="/student" method="POST">
-                    <input type="hidden" name="_id" value="{{student._id}}" required>
-                    <div class="form-group">
-                        <label for="studentId">Student ID</label>
-                        <input type="text" class="form-control" name="studentId" id="studentId" 
-                            placeholder="Enter Student ID" value="{{student.studentId}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name"
-                            placeholder="Enter First and Middle Name" value="{{student.name}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" class="form-control" name="lastName" id="lastName" 
-                            placeholder="Enter Last Name" value="{{student.lastName}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="birthDate">Birth Date</label>
-                        <input type="date" class="form-control" name="birthDate" id="birthDate" 
-                            placeholder="Enter birth Date" value="{{student.birthDate}}">
-                </div>
+<br />
+<br />
 
-                <div class="form-group">
-                        <label for="gradeLevel">Grade Lavel</label>
-                        <input type="text" class="form-control" name="gradeLevel" id="gradeLevel" 
-                            placeholder="Enter Grade Lavel" value="{{student.gradeLevel}}">
-                </div>
-                            
+<div class="container"
+    style="width: 40%; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 2px solid rgb(202, 237, 255); border-radius: 5px; padding:20px; background-color:rgb(202, 237, 255);">
+    <h2 style="text-align: center;">{{ viewTitle }}</h2>
+
+    <form action="/student" method="POST">
+        <input type="hidden" name="_id" value="{{student._id}}" required>
+        <div class="form-group">
+            <label for="studentId">Student ID</label>
+            <input type="text" class="form-control" name="studentId" id="studentId" placeholder="Enter Student ID"
+                value="{{student.studentId}}">
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter First and Middle Name"
+                value="{{student.name}}">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name"
+                value="{{student.lastName}}">
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" class="form-control" name="birthDate" id="birthDate" placeholder="Enter birth Date"
+                value="{{student.birthDate}}">
+        </div>
+
+        <div class="form-group">
+            <label for="gradeLevel">Grade Lavel</label>
+            <input type="text" class="form-control" name="gradeLevel" id="gradeLevel" placeholder="Enter Grade Lavel"
+                value="{{student.gradeLevel}}">
+        </div>
+
         <button type="submit" class="btn btn-info">Save</button>
     </form>
 </div>

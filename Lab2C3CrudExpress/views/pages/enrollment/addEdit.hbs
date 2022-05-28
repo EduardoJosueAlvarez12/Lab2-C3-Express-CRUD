@@ -1,7 +1,10 @@
 {{> header }}
-<h2 style="text-align: center;">{{ viewTitle }}</h2>
-<div class="container">
-    <form action="/enrollment" method="POST">
+<br />
+<br />
+<div class="container"
+    style="width: 40%; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border: 2px solid rgb(202, 237, 255); border-radius: 5px; padding:20px; background-color:rgb(202, 237, 255);">
+    <h2 style="text-align: center;">{{ viewTitle }}</h2>
+    <form action=" /enrollment" method="POST">
         <input type="hidden" name="_id" value="{{enrollment._id}}" required>
 
         {{!-- este mensaje validara que el Estudiante Exista --}}
@@ -14,12 +17,16 @@
         <div class="form-group">
             <label for="studentId">Student ID</label>
             <input type="text" class="form-control" name="studentId" id="studentId" placeholder="Enter Student ID"
-                value="{{enrollment.studentId}}">
+                aria-describedby="studentIdHelp" value="{{enrollment.studentId}}">
+            <small id="studentIdHelp" class="form-text text-muted">Make sure you type the Student ID exactly how it is
+                registered in our database.</small>
         </div>
         <div class="form-group">
             <label for="courseId">Course ID</label>
             <input type="text" class="form-control" name="courseId" id="courseId" placeholder="Enter Course ID"
-                value="{{enrollment.courseId}}">
+                aria-describedby="courseIdHelp" value="{{enrollment.courseId}}">
+            <small id="courseIdHelp" class="form-text text-muted">Make sure you type the Course ID exactly how it is
+                registered in our database.</small>
         </div>
         <div class="form-group">
             <label for="size">Date</label>
